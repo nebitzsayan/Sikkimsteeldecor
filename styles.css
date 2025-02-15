@@ -1,0 +1,205 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e6f7ff, #fdfdfd);
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    background-size: 200% 200%;
+    animation: gradientShift 10s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 25px;
+    width: 95%;
+    margin: 10px auto;
+    animation: slideIn 1s ease-out;
+}
+
+.logo {
+    height: 80px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* Text animation for headings */
+h2 {
+    color: #37474f;
+    font-size: 2.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 8px rgba(55, 71, 79, 0.15);
+    opacity: 0;
+    animation: fadeIn 2s ease forwards, slideIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Sections */
+section {
+    padding: 50px 10px;
+    margin: 20px 5%;
+    border-radius: 25px;
+    box-shadow: 0px 6px 15px rgba(134, 115, 115, 0.05);
+    background: rgba(255, 255, 255, 0.9);
+    animation: fadeIn 2s ease forwards;
+    position: relative;
+}
+
+/* Hover effect on sections */
+section:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15), 0px 0px 15px rgba(72, 207, 173, 0.2);
+}
+
+/* Product Section */
+.product {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    animation: fadeIn 2s ease-in-out;
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.product img:hover {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.product h3 {
+    font-size: 1.5rem;
+    color: #282456;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #282456, #282456);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(135deg, #282456, #282456);
+    box-shadow: 0px 10px 20px rgba(0, 128, 128, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #282456;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: fadeIn 2s ease;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    section {
+        padding: 40px 5px;
+    }
+
+    .product {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        height: 50px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .footer {
+        font-size: 0.8rem;
+    }
+}
